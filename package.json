@@ -1,0 +1,24 @@
+{
+  "name": "kata",
+  "version": "0.0.0",
+  "description": "TDD Kata Tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha index.spec.js"
+  },
+  "author": "Anthony Garreffa",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "clear": "0.0.1",
+    "gulp": "~3.8.7",
+    "gulp-browserify": "~0.5.0",
+    "gulp-jshint": "~1.8.4",
+    "gulp-karma": "0.0.4",
+    "gulp-mocha": "~0.5.2",
+    "jshint-stylish": "~0.4.0",
+    "karma": "^0.13.3",
+    "mocha": "~1.18.2",
+    "sinon": "~1.9.1"
+  }
+}

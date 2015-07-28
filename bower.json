@@ -1,0 +1,17 @@
+{
+  "name": "generator-toy",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jhive/generator-toy",
+  "authors": [
+    "Anthony Garreffa <anthony.garreffa@onstar.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
