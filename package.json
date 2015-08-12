@@ -12,13 +12,21 @@
     "chai": "~1.9.1",
     "clear": "0.0.1",
     "gulp": "~3.8.7",
-    "gulp-browserify": "~0.5.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
     "gulp-jshint": "~1.8.4",
     "gulp-karma": "0.0.4",
     "gulp-mocha": "~0.5.2",
     "jshint-stylish": "~0.4.0",
     "karma": "^0.13.3",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.2.0",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-spec-reporter": "0.0.20",
+    "main-bower-files": "^2.9.0",
     "mocha": "~1.18.2",
+    "phantomjs": "^1.9.17",
     "sinon": "~1.9.1"
   }
 }

@@ -16,6 +16,7 @@
     "require":true,
     "console":true,
     "describe":true,
+    "angular":true,
     "it":true
   }
 }
