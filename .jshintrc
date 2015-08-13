@@ -16,7 +16,10 @@
     "require":true,
     "console":true,
     "describe":true,
+    "before":true,
+    "beforeEach":true,
     "angular":true,
-    "it":true
+    "it":true,
+    "inject":true
   }
 }

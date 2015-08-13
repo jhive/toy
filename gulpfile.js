@@ -1,11 +1,12 @@
-var gulp = require('gulp'),
-  jshint = require('gulp-jshint'),
-  karma = require('karma'),
-  connect = require('gulp-connect'),
-  concat = require('gulp-concat'),
-  clean = require('gulp-clean'),
-  mainBowerFiles = require('main-bower-files'),
-  clear = require('clear');
+var gulp = require('gulp');
+var exec = require('child_process').exec;
+var jshint = require('gulp-jshint');
+var karma = require('karma');
+var connect = require('gulp-connect');
+var concat = require('gulp-concat');
+var clean = require('gulp-clean');
+var mainBowerFiles = require('main-bower-files');
+var clear = require('clear');
 
 
 gulp.task('clear', function(){
@@ -40,17 +41,14 @@ gulp.task('jshint', function(){
     .pipe(jshint.reporter('fail'));
 });
 
-gulp.task('karma', function(){
-  console.log(__dirname + '/karma.conf.js');
-
-  new karma.Server({
-      configFile: __dirname + '/karma.conf.js',
-      singleRun: false
-    }).start();
+gulp.task('karma-start', function(){
+  exec('node node_modules/.bin/karma start karma.conf.js');
 });
 
-gulp.task('test', ['jshint'], function(){
-   //new karma.Runner().run();
+gulp.task('karma-run', ['jshint'], function(done){
+  karma.runner.run({
+      configFile: __dirname + '/karma.conf.js',
+  }, done);
 });
 
 gulp.task('reload', function(){
@@ -59,8 +57,8 @@ gulp.task('reload', function(){
 });
 
 //Need to catch errors so mocha doesn't blow up the watcher
-gulp.task('watch', ['karma'], function(){
-  gulp.watch('src/**/*.js', ['clear', 'test', 'reload', 'scripts', 'bower']);
+gulp.task('watch', ['karma-start'], function(){
+  gulp.watch('src/**/*.js', ['clear', 'karma-run', 'reload', 'scripts', 'bower']);
   gulp.watch('src/**/*.html', ['clear', 'reload', 'html']);
   gulp.watch('src/**/*.css', ['clear', 'reload']);
 });
